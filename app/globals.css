@@ -119,3 +119,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.PhoneInputInput::placeholder {
+  color: #abb8c4; /* Lighter color for better visibility */
+}
