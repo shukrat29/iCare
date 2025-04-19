@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Control } from "react-hook-form";
 import { FormFieldType } from "./forms/PatientForm";
 import Image from "next/image";
+import DatePicker from "react-datepicker";
 
 interface CustomProps {
   control: Control<any>;
@@ -68,6 +69,25 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             className="text-black PhoneInputInput"
           />
         </FormControl>
+      );
+
+    case FormFieldType.DATE_PICKER:
+      return (
+        <div className="flex rounded-md border border-dark-500 bg-dark-400">
+          <Image
+            src="/assets/calender.svg"
+            height={24}
+            width={24}
+            alt="calender"
+            className="ml-2"
+          />
+          <FormControl>
+            <DatePicker
+              selected={field.value}
+              onChange={(date) => field.onChange(date)}
+            />
+          </FormControl>
+        </div>
       );
     default:
       return null;

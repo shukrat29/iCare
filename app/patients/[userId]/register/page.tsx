@@ -1,9 +1,12 @@
+"use server";
+
 import RegisterForm from "@/components/forms/RegisterForm";
 import { getUser } from "@/lib/actions/patient.actions";
 import Image from "next/image";
 import Link from "next/link";
 
-const Register = async ({ params: { userId } }: SearchParamProps) => {
+const Register = async ({ params }: SearchParamProps) => {
+  const { userId } = params;
   const user = await getUser(userId);
   return (
     <div className="flex h-screen max-h-screen">
@@ -30,11 +33,11 @@ const Register = async ({ params: { userId } }: SearchParamProps) => {
 
       {/* right side doctor image */}
       <Image
-        src="/assets/dc.png"
+        src="/assets/register.png"
         height={1000}
         width={1000}
         alt="doctor"
-        className="side-img max-w-[390px]"
+        className="side-img max-w-[40%]"
       />
     </div>
   );
