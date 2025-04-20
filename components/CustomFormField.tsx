@@ -1,5 +1,7 @@
 import React from "react";
 import "react-phone-number-input/style.css";
+import "react-datepicker/dist/react-datepicker.css";
+
 import PhoneInput from "react-phone-number-input";
 import { E164Number } from "libphonenumber-js";
 
@@ -66,7 +68,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             withCountryCallingCode
             value={field.value as E164Number | undefined}
             onChange={field.onChange}
-            className="text-black PhoneInputInput"
+            className=" "
           />
         </FormControl>
       );
@@ -106,6 +108,7 @@ const CustomFormField = (props: CustomProps) => {
             <FormLabel>{label}</FormLabel>
           )}
           <RenderField field={field} props={props} />
+          {/* error message */}
           <FormMessage className="shad-error" />
         </FormItem>
       )}
