@@ -60,7 +60,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           name="name"
           label="Full name"
           placeholder="John Doe"
-          iconSrc="/assets/user.svg"
+          iconSrc="/assets/user.png"
           iconAlt="user"
         />
         <div className="flex flex-col gap-6 xl:flex-row">
@@ -70,7 +70,7 @@ const RegisterForm = ({ user }: { user: User }) => {
             name="email"
             label="Email"
             placeholder="shukratamang.npl@gmail.com"
-            iconSrc="/assets/email.svg"
+            iconSrc="/assets/email.png"
             iconAlt="email"
           />
           <CustomFormField
